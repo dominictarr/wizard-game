@@ -166,7 +166,7 @@ function api (row) {
       return self
     },
 
-    hear: createListener('say', function (f) {
+    hear: createListener('hear', function (f) {
       return function (message, id) {
         if(self.whatDist(id).length < 1000) f(message, id)
       }
