@@ -13,7 +13,7 @@ function isObject (o) {
 var timer = null
 
 //gonna
-var RADIUS = 50
+var RADIUS = 25
 
 function left(r, radius) {
   r = model.get(r)
@@ -55,7 +55,7 @@ model.on('row_update', function detect () {
     //sort the elements by their left bound,
     //so it is easy to check whether there has been a collision.
     while(sorted[j] && left(sorted[j]) < right(sorted[i])) {
-      if(dist(sorted[i], sorted[j]).length < RADIUS*2) {
+      if(dist(sorted[i], sorted[j]).length < RADIUS) {
         model.emit('touch', sorted[i], sorted[j])
       }
       j ++
